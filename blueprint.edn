@@ -1,0 +1,45 @@
+{:itonami.blueprint/id "cloud-itonami-4330"
+ :itonami.blueprint/name "Building Completion and Finishing"
+ :itonami.blueprint/isic-rev5 "4330"
+ :itonami.blueprint/domain :construction/building-completion-and-finishing
+ :itonami.blueprint/license "AGPL-3.0-or-later"
+ :itonami.blueprint/social-impact [:worker-safety :hazmat-containment :trade-craft-quality]
+ :itonami.blueprint/governor :finishing-governor
+ :itonami.blueprint/robotics false
+ :itonami.blueprint/required-technologies [:identity :forms :audit-ledger :notifications]
+ :itonami.blueprint/status :public-oss
+ :itonami.blueprint/maturity :implemented
+ :itonami.blueprint/implemented-slice
+ "`:finishing-governor` is implemented end-to-end in `src/finishing` as a
+ BUILDING-COMPLETION/FINISHING-PROJECT OPERATIONS COORDINATION actor --
+ Finishing Advisor (LLM proposal-only) ⊣ Finishing Governor (closed-op-
+ allowlist / site-verification / pre-work hazmat-survey / fall-protection
+ / unresolved-concern hard-gates). Deliberately narrower in authority than
+ the `cloud-itonami-isic-4211` (construction) robotics-premise reference
+ this actor follows structurally: `:itonami.blueprint/robotics` is
+ honestly `false` here -- this actor holds NO trade-equipment-control
+ authority and NO structural-completion-sign-off authority (both are
+ HARD, permanent governor blocks, never overridable by human approval --
+ see `finishing.governor` ns docstring). Every one of its four proposal
+ ops (`:log-site-record` / `:schedule-finishing-operation` / `:flag-
+ safety-concern` / `:order-supplies`) carries `:effect :propose` ONLY --
+ the governor HARD-holds any proposal that doesn't
+ (`effect-not-propose-violations`), a structural invariant distinguishing
+ this actor from siblings that DO commit real-world actuation effects.
+ Per-jurisdiction pre-work hazmat-survey / fall-protection legal-basis
+ catalog (JPN/USA/DEU, `finishing.facts`) with real official sources
+ (independently verified against osha.gov / ecfr.gov / laws.e-gov.go.jp /
+ eur-lex.europa.eu / baua.de before being written), and mail+phone
+ safety-concern notification (`finishing.notify`, a portable `.cljc`
+ caller-injected transport seam -- no JVM interop, per this repo's
+ cljs-first mandate) to the site's supervisor/safety-officer contact
+ roster. `:flag-safety-concern` ALWAYS escalates to a human, at every
+ phase, unconditionally. UNLIKE the `cloud-itonami-isic-4311`/`cloud-
+ itonami-isic-4210` sibling actors, `:schedule-finishing-operation` here
+ is NOT a permanent `high-stakes` member -- it MAY auto-commit at phase 3
+ once every HARD check clears and confidence is high, reflecting
+ building-completion/finishing trade work's materially lower risk profile
+ relative to demolition or heavy-civil earthwork scheduling (see
+ `finishing.governor`/`finishing.phase` ns docstrings for the full
+ rationale). See `docs/` -- README `Actuation` section -- for the full
+ governor-check enumeration and the rationale for each hard/soft rule."}
