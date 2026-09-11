@@ -40,7 +40,7 @@
   map is iterated in an explicit sort order -- byte-identical across
   reruns (verify by rendering twice and comparing `shasum`).
 
-  Usage: `clojure -M:dev:render-html [out-file]`
+  Usage: `kbb -M:dev:render-html [out-file]`
   (default `docs/samples/operator-console.html`)."
   (:require [jp-go-dds.skin]
             [kotoba.lang.text :as str]
@@ -682,7 +682,7 @@
 
      "</main>\n"
      "<footer>\n"
-     "  <p>生成: <code>clojure -M:dev:render-html</code>（<code>finishing.render-html</code>）。"
+     "  <p>生成: <code>kbb -M:dev:render-html</code>（<code>finishing.render-html</code>）。"
      "実 actor 実行から生成される決定的な成果物で、同じ seed に対して再実行してもバイト単位で同一。"
      "タイムスタンプ・乱数・時刻読み取りを一切含まない。</p>\n"
      "  <p>スタイル: <a href=\"https://github.com/kotoba-lang/jp-go-digital-design-system\">"

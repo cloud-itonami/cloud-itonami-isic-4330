@@ -45,11 +45,11 @@
   ;; io.github.com-junkawasaki/langchain-clj. langgraph declares the same
   ;; library as io.github.kotoba-lang/langchain, so the entry matched no
   ;; node in the resolved tree and never reached the classpath -- verified
-  ;; with `clojure -Stree`/-Spath, unchanged before and after removal.
+  ;; with `kbb -Stree`/-Spath, unchanged before and after removal.
   :dev {}
-  ;; clojure -M:dev:run  -> drive the demo through one OperationActor
+  ;; kbb -M:dev:run  -> drive the demo through one OperationActor
   :run {:main-opts ["-m" "finishing.sim"]}
-  ;; clojure -M:dev:render-html [out-file] -> regenerate
+  ;; kbb -M:dev:render-html [out-file] -> regenerate
   ;; docs/samples/operator-console.html by driving the REAL actor stack
   ;; (finishing.operation -> finishing.governor -> finishing.store).
   ;; Flagship checklist item 2. Deterministic: byte-identical across reruns.
