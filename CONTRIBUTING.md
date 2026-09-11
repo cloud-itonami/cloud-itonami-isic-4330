@@ -10,8 +10,8 @@ the business blueprint, the Finishing Advisor/Governor actor and operator
 contracts.
 
 ```bash
-clojure -M:dev:test   # run the full test suite
-clojure -M:lint       # clj-kondo, errors fail
+kbb -M:dev:test   # run the full test suite
+kbb -M:lint       # clj-kondo, errors fail
 ```
 
 ## Rules
