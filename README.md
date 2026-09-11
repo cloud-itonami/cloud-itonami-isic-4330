@@ -92,7 +92,7 @@ ClojureScript, `nbb`, and `kotoba wasm`/`clojurewasm`.
 | `:flag-safety-concern` | surface a scaffold-safety / materials-hazard (VOC paint fumes, asbestos or lead-based paint in old finishes) / structural concern | Drafts a safety-concern flag; ALWAYS escalates to a human, unconditionally. Once approved, `finishing.notify` sends the notice (mail + phone) to the site's supervisor/safety-officer contact roster. |
 | `:order-supplies` | materials/equipment procurement proposal | Drafts a supply-order proposal. Escalates above a cost threshold or below the confidence floor; may auto-commit at phase 3 otherwise. |
 
-**Legal basis is data, not code** -- `src/finishing/facts.cljc`'s
+**Legal basis is data, not code** -- `src/finishing/facts.cljk`'s
 `catalog` is the per-jurisdiction EDN source-of-truth the governor checks
 every `:schedule-finishing-operation` proposal against (JPN/USA/DEU
 seeded; DEU stands in for the EU, the same convention
