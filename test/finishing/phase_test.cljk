@@ -6,7 +6,7 @@
   `finishing.phase` ns docstring 'Actuation' section (this repo
   deliberately differs from `demolition.phase`/`roadrail.phase`, which
   never auto-commit their own schedule op)."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [finishing.phase :as phase]))
 
 (deftest flag-safety-concern-never-auto-at-any-phase

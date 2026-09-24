@@ -4,7 +4,7 @@
   same contract is what makes 'swap the SSoT for Datomic / kotoba-server'
   a configuration change, not a rewrite -- see `demolition.store-
   contract-test` for the same pattern on the sibling actor."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [finishing.store :as store]))
 
 (defn- backends []

@@ -14,7 +14,7 @@
     (commit OR hold) leaves exactly one ledger fact. Every committed
     record's `:effect` is `:propose` -- this actor never performs a
     real-world actuation."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [langgraph.graph :as g]
             [finishing.store :as store]
             [finishing.operation :as op]
