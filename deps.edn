@@ -14,13 +14,13 @@
  ;; trade-equipment/crew actions, only proposes, schedules, flags and logs,
  ;; all governor- and human-gated (see README). Per this repo's mandate
  ;; (cljs-first / fully portable `.cljc`, no JVM interop -- ADR pending, see
- ;; superproject CLAUDE.md `.cljc`/`.kotoba` runtime priority note),
+ ;; superproject AGENTS.md `.cljc`/`.kotoba` runtime priority note),
  ;; `finishing.notify`'s real transport is a plain-function INJECTION seam
  ;; (`fn-notifier`) -- unlike some earlier sibling actors' notify.cljc, this
  ;; repo does NOT embed a `java.net.http`/platform HTTP client itself.
  ;;
  ;; `jp-go-digital-design-system` (DADS -- デジタル庁デザインシステム) is the
- ;; workspace's BASE design system (superproject CLAUDE.md "UI/UX 標準"). It is
+ ;; workspace's BASE design system (superproject AGENTS.md "UI/UX 標準"). It is
  ;; used ONLY at build time, by `finishing.render-html`, to style
  ;; `docs/samples/operator-console.html` (`jp-go-dds.skin/dds+skin`). It is a
  ;; git dep rather than `:local/root` so a standalone fork outside the monorepo
